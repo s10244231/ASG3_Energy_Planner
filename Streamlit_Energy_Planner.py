@@ -161,7 +161,7 @@ if st.button("Calculate"):
         st.markdown("<hr style='border: 1px solid #ddd;'/>", unsafe_allow_html=True)
         
         # Plot pie chart with title
-        fig, ax = plt.subplots(figsize=(10, 8))  # Adjust the figsize here
+        fig, ax = plt.subplots(figsize=(8, 6))  # Adjust the figsize here
         labels = ['Carbon Offset', 'Remaining Emissions']
         sizes = [carbon_offset_from_current_panels, remaining_carbon_emissions]
         colors = ['#ff9999','#66b3ff']
@@ -171,22 +171,22 @@ if st.button("Calculate"):
             sizes, explode=explode, labels=labels, colors=colors,
             autopct=lambda p: '{:.1f}%'.format(p),  # Format percentage
             shadow=True, startangle=140, 
-            textprops={'fontsize': 16, 'fontweight': 'bold'}  # Bold labels
+            textprops={'fontsize': 13, 'fontweight': 'bold'}  # Bold labels
         )
         
         ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         
         # Add title to pie chart with specific font properties
-        ax.set_title('Carbon Offset vs. Remaining Emissions', fontsize=26, fontweight='bold')
+        ax.set_title('Carbon Offset vs. Remaining Emissions', fontsize=20, fontweight='bold')
 
         # Adjust percentage font size and make it bold
         for autotext in autotexts:
-            autotext.set_fontsize(21)
+            autotext.set_fontsize(16)
             autotext.set_fontweight('bold')
 
         # Adjust label font size and make it bold
         for text in texts:
-            text.set_fontsize(21)
+            text.set_fontsize(16)
             text.set_fontweight('bold')
 
         st.pyplot(fig)
