@@ -161,7 +161,7 @@ if st.button("Calculate"):
         st.markdown("<hr style='border: 1px solid #ddd;'/>", unsafe_allow_html=True)
         
         # Plot pie chart with title
-        fig, ax = plt.subplots(figsize=(12, 9))  # Adjust the figsize here
+        fig, ax = plt.subplots(figsize=(10, 8))  # Adjust the figsize here
         labels = ['Carbon Offset', 'Remaining Emissions']
         sizes = [carbon_offset_from_current_panels, remaining_carbon_emissions]
         colors = ['#ff9999','#66b3ff']
